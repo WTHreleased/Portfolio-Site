@@ -2,30 +2,27 @@ body {
   font-family: "Source Sans 3", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: teal;
-  color: white;
+  background-color: black;
 }
 
 .navbar {
-  background-color: rgb(94, 54, 103);
-  direction: rtl;
+  background-color: teal;
   height: 100vh;
   position: fixed;
   right: 0;
   margin: 0;
-  width: auto;
   display: flex;
   flex-flow: row wrap;
-  border-left: 2px solid rgb(94, 54, 103);
+  border-left: 2px solid black;
 }
 
 .navbar ul {
-  margin: 0;
   padding: 0;
   height: 100vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
+  margin: 0;
 }
 
 .navbar li {
@@ -53,10 +50,10 @@ body {
   display: flex;
   flex-flow: column nowrap;
   margin: 0;
-  background-color: black;
+  background-color: teal;
   align-items: flex-start;
   justify-content: center;
-  padding: 20px 50px 20px 20px;
+  padding: 0px 40px 0px 10px;
 }
 
 .welcome h1 {
@@ -66,25 +63,71 @@ body {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 5rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   margin: 0;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 4rem);
-  margin: 10px 0;
-}
-.avatar {
-  justify-self: center;
-}
-.avatar-image {
-  width: 150px;
-  height: auto;
-  border-radius: 50%;
-  padding: 30px 50px 30px 30px;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  margin: 6px 0;
 }
 
 p {
   font-size: clamp(1rem, 2vw, 3rem);
-  margin: 6px;
+  margin: 6px 0;
+}
+
+li {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.avatar {
+  justify-self: center;
+  color: white;
+  text-align: center;
+  padding: 10px 40px 10px 10px;
+}
+
+.avatar-image {
+  width: 150px;
+  height: auto;
+}
+
+.tikky-image {
+  width: 100px;
+  height: auto;
+}
+
+.journey-image {
+  width: 250px;
+  height: auto;
+}
+
+.journey-card {
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .page-card {
+    height: 100vh;
+    padding: 0 40px;
+  }
+
+  .journey-card {
+    padding: 10px 80px 10px 40px;
+  }
+
+  .avatar {
+    align-self: center;
+    min-width: 30vw;
+  }
+
+  .avatar-image {
+    width: 200px;
+  }
 }
