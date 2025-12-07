@@ -2,19 +2,12 @@ body {
   font-family: "Source Sans 3", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: teal;
   color: white;
 }
 
-#landing-page {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
 .navbar {
-  background-color: teal;
+  background-color: rgb(94, 54, 103);
   direction: rtl;
   height: 100vh;
   position: fixed;
@@ -23,6 +16,7 @@ body {
   width: auto;
   display: flex;
   flex-flow: row wrap;
+  border-left: 2px solid rgb(94, 54, 103);
 }
 
 .navbar ul {
@@ -46,37 +40,29 @@ body {
   writing-mode: vertical-rl;
   padding: 5px;
 }
-.welcome-section {
-  display: flex;
-  flex-flow: row wrap;
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  justify-items: center;
   height: 100vh;
-  width: auto;
-  max-height: 100vh;
-  width: 80vw;
-  padding-right: 40px;
-  justify-content: center;
 }
 
-.welcome {
+.page-card {
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  flex-flow: column nowrap;
   margin: 0;
-  flex: 1;
-  width: 80%;
-  height: auto;
-}
-
-.welcome div {
-  height: auto;
-  width: 50%;
+  background-color: black;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 50px 20px 20px;
 }
 
 .welcome h1 {
   font-size: clamp(2rem, 5vw, 5rem);
-  text-indent: -1.5rem;
-  margin: 0 0 0 1.5rem;
   padding-right: 20px;
+  width: auto;
 }
 
 h1 {
@@ -84,14 +70,21 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  margin: 10px 0;
+}
+.avatar {
+  justify-self: center;
+}
 .avatar-image {
-  width: 100%;
-  max-width: 200px;
+  width: 150px;
   height: auto;
   border-radius: 50%;
+  padding: 30px 50px 30px 30px;
 }
 
 p {
   font-size: clamp(1rem, 2vw, 3rem);
-  margin: 10px;
+  margin: 6px;
 }
