@@ -3,6 +3,14 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
+  color: white;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+  height: 100vh;
+  gap: 0;
 }
 
 .navbar {
@@ -42,18 +50,18 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   align-items: start;
-  justify-items: center;
+  justify-items: start;
   height: 100vh;
 }
 
 .page-card {
-  display: flex;
-  flex-flow: column nowrap;
+  display: grid;
+  grid-auto-rows: min-content;
   margin: 0;
   background-color: teal;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0px 40px 0px 10px;
+  align-content: start;
+  justify-items: start;
+  padding: 10px 40px 10px 10px;
 }
 
 .welcome h1 {
@@ -82,32 +90,66 @@ li {
 }
 
 .avatar {
+  display: block;
   justify-self: center;
   color: white;
   text-align: center;
   padding: 10px 40px 10px 10px;
+  align-self: center;
 }
 
 .avatar-image {
-  width: 150px;
+  width: 50%;
   height: auto;
 }
 
 .tikky-image {
-  width: 100px;
+  width: 50%;
+  height: auto;
+}
+
+.connect-image {
+  width: 50%;
   height: auto;
 }
 
 .journey-image {
-  width: 250px;
+  display: none;
+  width: 70%;
   height: auto;
+  justify-self: center;
 }
 
 .journey-card {
   height: 100vh;
 }
 
-@media screen and (min-width: 768px) {
+.project-thumbnails {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-thumbnails img {
+  width: 60%;
+  border-radius: 30px;
+  justify-self: center;
+}
+
+.button {
+  display: block;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: teal;
+  color: white;
+  text-decoration: none;
+  justify-self: center;
+  margin-top: 10px;
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
+@media screen and (min-width: 750px) {
   .card {
     display: grid;
     grid-template-columns: auto auto;
@@ -115,19 +157,36 @@ li {
 
   .page-card {
     height: 100vh;
-    padding: 0 40px;
+    padding: 0 80px;
+    align-content: center;
   }
 
   .journey-card {
-    padding: 10px 80px 10px 40px;
+    padding: 10px 100px 10px 80px;
   }
 
   .avatar {
-    align-self: center;
-    min-width: 30vw;
+    width: 30vw;
   }
 
-  .avatar-image {
-    width: 200px;
+  .journey-image {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .journey-image {
+    display: none;
+    width: 50%;
+  }
+  .journey-card {
+    height: 100vh;
+  }
+  .project-thumbnails img {
+    width: 50%;
+  }
+
+  .avatar {
+    align-self: start;
   }
 }
