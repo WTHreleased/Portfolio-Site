@@ -132,7 +132,7 @@ li {
 }
 
 .project-thumbnails img {
-  width: 60%;
+  width: 50%;
   border-radius: 30px;
   justify-self: center;
 }
@@ -164,6 +164,9 @@ li {
   .journey-card {
     padding: 10px 100px 10px 80px;
   }
+  .project-thumbnails img {
+    width: 60%;
+  }
 
   .avatar {
     width: 30vw;
@@ -181,9 +184,6 @@ li {
   }
   .journey-card {
     height: 100vh;
-  }
-  .project-thumbnails img {
-    width: 50%;
   }
 
   .avatar {
