@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Source Sans 3", sans-serif;
   margin: 0;
@@ -5,28 +12,34 @@ body {
   background-color: black;
   color: white;
 }
+
 main {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+section {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: min-content;
-  height: 100vh;
-  gap: 0;
+  grid-template-rows: max-content;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  scroll-snap-align: start;
+  scroll-snap-type: y mandatory;
 }
 
 .navbar {
   background-color: teal;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   right: 0;
-  margin: 0;
-  display: flex;
-  flex-flow: row wrap;
   border-left: 2px solid black;
 }
 
 .navbar ul {
   padding: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
@@ -38,30 +51,23 @@ main {
 }
 
 .navbar li a {
-  display: block;
   color: white;
-  text-align: center;
   text-decoration: none;
   writing-mode: vertical-rl;
   padding: 5px;
 }
 
-.card {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: start;
-  justify-items: start;
-  height: 100vh;
+.navbar li a:hover {
+  color: goldenrod;
+  transition: all 0.3s;
+  font-weight: bold;
 }
 
-.page-card {
-  display: grid;
-  grid-auto-rows: min-content;
-  margin: 0;
+.text-container {
   background-color: teal;
-  align-content: start;
-  justify-items: start;
   padding: 10px 40px 10px 10px;
+  height: 100%;
+  align-content: center;
 }
 
 .welcome h1 {
@@ -72,11 +78,13 @@ main {
 
 h1 {
   font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 800;
   margin: 0;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.3rem, 3vw, 3rem);
+  font-weight: 600;
   margin: 6px 0;
 }
 
@@ -85,108 +93,97 @@ p {
   margin: 6px 0;
 }
 
+a {
+  color: goldenrod;
+  text-decoration: none;
+}
+
 li {
   font-size: clamp(1rem, 2vw, 2rem);
 }
 
-.avatar {
-  display: block;
-  justify-self: center;
+.goldenrod {
+  color: goldenrod;
+}
+
+.image-container {
   color: white;
-  text-align: center;
   padding: 10px 40px 10px 10px;
-  align-self: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
 }
 
-.avatar-image {
-  width: 50%;
+.image-container img {
+  width: 40%;
   height: auto;
-}
-
-.tikky-image {
-  width: 50%;
-  height: auto;
-}
-
-.connect-image {
-  width: 50%;
-  height: auto;
-}
-
-.journey-image {
-  display: none;
-  width: 70%;
-  height: auto;
+  display: block;
+  min-width: 0;
+  min-height: 0;
   justify-self: center;
+  border-radius: 5px;
+  margin: 20px;
 }
 
-.journey-card {
-  height: 100vh;
-}
-
-.project-thumbnails {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: 10px;
-}
-
-.project-thumbnails img {
+.projects img {
   width: 50%;
-  border-radius: 30px;
-  justify-self: center;
+  height: auto;
+}
+
+.projects img {
+  display: block;
+  opacity: 0.8;
+  border: 1px solid transparent;
+}
+
+.projects img:hover {
+  opacity: 1;
+  transition: all 0.3s;
+  border: 1px solid white;
+  transform: scale(1.2);
 }
 
 .button {
   display: block;
-  padding: 10px 20px;
+  padding: 5px 10px;
+  border: 2px solid goldenrod;
   border-radius: 15px;
-  background-color: teal;
+  background-color: black;
   color: white;
   text-decoration: none;
-  justify-self: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  max-width: fit-content;
   font-size: clamp(1rem, 2vw, 3rem);
 }
 
-@media screen and (min-width: 750px) {
-  .card {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
-
-  .page-card {
-    height: 100vh;
-    padding: 0 80px;
-    align-content: center;
-  }
-
-  .journey-card {
-    padding: 10px 100px 10px 80px;
-  }
-  .project-thumbnails img {
-    width: 60%;
-  }
-
-  .avatar {
-    width: 30vw;
-  }
-
-  .journey-image {
-    display: block;
-  }
+.button {
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@media screen and (max-width: 400px) {
-  .journey-image {
-    display: none;
-    width: 50%;
-  }
-  .journey-card {
-    height: 100vh;
+.button:hover {
+  background-color: goldenrod;
+  color: black;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.man-snap {
+  scroll-snap-type: y mandatory;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100%;
   }
 
-  .avatar {
-    align-self: start;
+  .text-container {
+    padding: 0 80px;
+  }
+
+  .image-container img {
+    width: 70%;
   }
 }
