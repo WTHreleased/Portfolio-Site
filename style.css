@@ -1,3 +1,7 @@
+/* CSS for WTHreleased.com*/
+
+/* Landing Page */
+
 html,
 body {
   height: 100%;
@@ -16,9 +20,12 @@ body {
 main {
   height: 100%;
   overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 section {
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content;
@@ -26,7 +33,6 @@ section {
   min-width: 0;
   min-height: 0;
   scroll-snap-align: start;
-  scroll-snap-type: y mandatory;
 }
 
 .navbar {
@@ -55,12 +61,12 @@ section {
   text-decoration: none;
   writing-mode: vertical-rl;
   padding: 5px;
+  font-weight: 600;
 }
 
 .navbar li a:hover {
   color: goldenrod;
   transition: all 0.3s;
-  font-weight: bold;
 }
 
 .text-container {
@@ -80,6 +86,7 @@ h1 {
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 800;
   margin: 0;
+  color: goldenrod;
 }
 
 h2 {
@@ -186,4 +193,28 @@ li {
   .image-container img {
     width: 70%;
   }
+}
+
+/* Projects Page Styles */
+
+.logo-box {
+  display: block;
+  color: white;
+  padding: 10px 40px 10px 10px;
+  align-content: center;
+}
+
+.logo-box a {
+  display: block;
+  align-items: center;
+  justify-items: center;
+  padding: 10px;
+}
+
+.logo-box img {
+  display: block;
+  background-color: white;
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
 }
