@@ -1,0 +1,177 @@
+body {
+
+    font-family: nunito;
+    margin: 0;
+    background: #f5d9df;
+}
+
+section.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    background: #f5d9df;
+    padding: 0px 10px;
+}
+
+nav.header {
+    align-items: center;
+}
+
+nav.header,
+ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 8px;
+    width: 400px;
+    justify-content: space-evenly;
+}
+
+section.navbar,
+h1.brand {
+    margin: 0;
+    color: #EA1C2C;
+    font-weight: 300;
+}
+
+li.navlink {
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+li.navlink :hover {
+    color: #EA1C2C;
+}
+
+li.navlink a {
+    text-decoration: none;
+    color: white;
+}
+
+section.content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+section.content#middle-section {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+}
+
+div.landing-text {
+    flex: 1;
+    text-align: center;
+}
+
+div.landing-text h1 {
+    flex: 1;
+    color: white;
+    font-weight: 100;
+    font-size: 4rem;
+    line-height: 0.75;
+}
+
+div.landing-text span {
+    color: red;
+}
+
+div.landing-image {
+    display: block;
+    flex: 1;
+}
+
+img.home-image {
+    max-width: 100%;
+    height: auto;
+    min-width: 500px;
+}
+
+div.home-text {
+    flex: 1;
+    text-align: center;
+}
+
+div.home-text h1 {
+    display: block;
+    flex: 1;
+    color: red;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+
+div.home-text p {
+    color: #f498b8;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+    padding: 0 150px;
+}
+
+@media (max-width: 1200px) {
+    section.content {
+        margin-bottom: 50px;
+    }
+
+    div.landing-text h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+
+    img.home-image {
+        min-width: 300px;
+    }
+
+    div.home-text p {
+        font-size: 1rem;
+        padding: 0 50px;
+    }
+
+    div.home-text h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    nav.header,
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 1000px;
+    }
+
+    section.content {
+        display: flex;
+        flex-flow: column-reverse wrap;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    section.content#middle-section {
+        display: flex;
+        flex-flow: column-reverse wrap;
+        align-items: center;
+    }
+
+    section.content #top {
+        display: flex;
+        flex-flow: column-reverse wrap;
+
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    div.landing-text {
+        visibility: collapse;
+        max-height: 0;
+    }
+}
